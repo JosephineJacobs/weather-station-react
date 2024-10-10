@@ -6,15 +6,31 @@ export default function App() {
     <div className="App">
       <h1>Weather App</h1>
       <footer>
-        This project was created by <a href="https://www.shecodes.io/graduates/83802-josephine-lu-ching-jacobs" target="_blank" rel="noreferrer">
-        Josephine Jacobs
-        </a>{" "}
-        and is {" "}
+        This project was created by{" "}
         <a
-          href="https://github.com/JosephineJacobs/weather-station-react" target="_blank" rel="noreferrer"
+          href="https://www.shecodes.io/graduates/83802-josephine-lu-ching-jacobs"
+          target="_blank"
+          rel="noreferrer"
         >
-          open-source on GitHub
-        </a>
+          Josephine Jacobs
+        </a>{" "}
+        and is open-source on{" "}
+        <a
+          href="https://github.com/JosephineJacobs/weather-station-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>{" "}
+        , published on{" "}
+        <a
+          href="https://weatherstation-react.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Netlify
+        </a> {" "}
+        .
       </footer>
     </div>
   );
