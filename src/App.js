@@ -11,7 +11,7 @@ export default function App() {
           <a
             href="https://www.shecodes.io/graduates/83802-josephine-lu-ching-jacobs"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Josephine Jacobs
           </a>{" "}
@@ -19,7 +19,7 @@ export default function App() {
           <a
             href="https://github.com/JosephineJacobs/weather-station-react"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>{" "}
@@ -27,7 +27,7 @@ export default function App() {
           <a
             href="https://weatherstation-react.netlify.app/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Netlify
           </a>{" "}
