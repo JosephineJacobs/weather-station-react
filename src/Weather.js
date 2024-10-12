@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   function handleResponse(response) {
-    console.log(response.data);
+   
     setWeatherData({
-        ready: true,
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
-      date: "Wednesday 07:00",
-      description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-      wind: response.data.main.speed,
-      city: response.data.name,
+    ready: true,
+    temperature: response.data.main.temp,
+    humidity: response.data.main.humidity,
+    date: new Date(response.data.dt * 1000),
+    description: response.data.weather[0].description,
+    iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+    wind: response.data.wind.speed,
+    city: response.data.name,
     });
-    setReady(true);
   }
 
   if (weatherData.ready) {
@@ -44,8 +44,9 @@ export default function Weather(props) {
 
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
-          <li className="text-capitalize">{weatherData.description}</li>
+          <li><FormattedDate date={weatherData.date}></li>
+          <li className="text-capitalize">{weatherData.description}
+          </li>
         </ul>
         <div className="row mt-3">
           <div className="col-6>">
@@ -75,7 +76,7 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "f90ba8be5a5cf28d7c20364d89089678";
-    let apiUrl = `http://api.openweathermap.org/data/3.0/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
