@@ -14,14 +14,14 @@ export default function Weather(props) {
     humidity: response.data.main.humidity,
     date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
-    iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    icon: response.data.weather[0].icon,
     wind: response.data.wind.speed,
-    city: response.data.name
+    city: response.data.name,
     });
   }
 function search() {
    const apiKey = "31b6121e71ft4cf3eeaff6e040baa0co";
-   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apikey}`;
+   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
    axios.get(apiUrl).then(handleResponse);
 }
 
