@@ -6,19 +6,20 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
-  function handleResponse(response) {
 
+  function handleResponse(response) {
     setWeatherData({
     ready: true,
     temperature: response.data.main.temp,
     humidity: response.data.main.humidity,
     date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
-    icon: response.data.weather[0].icon,
+    icon: response.data.condition.icon,
     wind: response.data.wind.speed,
-    city: response.data.name,
+    city: response.data.city,
     });
   }
+  
 function search() {
    const apiKey = "31b6121e71ft4cf3eeaff6e040baa0co";
    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -59,7 +60,7 @@ setCity(event.target.value);
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData}/> 
+        <WeatherInfo data={weatherData} /> 
       </div>
     );
   } else {
