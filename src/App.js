@@ -6,13 +6,13 @@ export default function App() {
   return (
     <div className="App">
       <div className="container" >
-      <Weather defaultCity="New York" />
+      <Weather defaultCity="Singapore"/>
       <footer>
         This project was created by{" "}
         <a
           href="https://www.shecodes.io/graduates/83802-josephine-lu-ching-jacobs"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
           Josephine Jacobs
         </a>{" "}
@@ -20,7 +20,7 @@ export default function App() {
         <a
           href="https://github.com/JosephineJacobs/weather-station-react"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
           GitHub
         </a>{" "}
@@ -28,7 +28,7 @@ export default function App() {
         <a
           href="hhttps://weatherstationreact.netlify.app/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
           Netlify
         </a>{" "}
